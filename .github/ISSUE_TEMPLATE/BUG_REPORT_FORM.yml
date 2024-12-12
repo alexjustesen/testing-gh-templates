@@ -10,8 +10,8 @@ body:
   - type: checkboxes
     attributes:
       label: Pre-work
-      description: Before opening an issue make sure you've checked the resources below first, any issues that could have been solved by reading
-the docs or closed issues will be closed.
+      description: |
+        Before opening an issue make sure you've checked the resources below first, any issues that could have been solved by reading the docs or closed issues will be closed.
       options:
       - label: I have read the [docs](https://docs.speedtest-tracker.dev)
         required: true
