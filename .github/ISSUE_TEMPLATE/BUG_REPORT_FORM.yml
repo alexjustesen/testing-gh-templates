@@ -6,16 +6,18 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! You should only use this form for issues, to request a change or feature use the [feature request form](https://github.com/alexjustesen/testing-gh-templates/issues).
+        Thanks for taking the time to fill out this bug report! You should only use this form for issues, to request a change or feature use the [feature request form](https://github.com/alexjustesen/testing-gh-templates).
   - type: checkboxes
     attributes:
       label: Pre-work
       description: |
         Before opening an issue make sure you've checked the resources below first, any issues that could have been solved by reading the docs or closed issues will be closed.
       options:
-      - label: I have read the [docs](https://docs.speedtest-tracker.dev).
+      - label: I have read the [docs]().
         required: true
       - label: I have searched existing open and closed issues.
+        required: true
+      - label: I agree to follow this project's [Code of Conduct]()
         required: true
   - type: textarea
     id: description
@@ -51,22 +53,9 @@ body:
       placeholder: Chrome, Firefox, Safari, etc.
     validations:
       required: true
-  - type: file
-    id: screenshot
-    attributes:
-      label: Screenshot
-      description: If applicable, add a screenshot to help explain the issue.
   - type: textarea
     id: logs
     attributes:
       label: Logs
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com).
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
