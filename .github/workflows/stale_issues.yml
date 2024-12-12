@@ -25,5 +25,4 @@ jobs:
           days-before-issue-stale: 1         # Number of days of inactivity before marking as stale
           days-before-issue-close: 1         # Number of days after being marked stale before closing
           stale-issue-label: 'stale'   # Label to mark issues as stale
-          exempt-issue-labels: 'keep-open' # Issues with these labels won't be marked stale
           only-issue-labels: 'question,bug'
