@@ -1,5 +1,5 @@
-name: Bug report
-description: Report an issue to help improve the application.
+name: Bug Report
+description: Use this template to report a bug or issue.
 title: "[Bug]: "
 labels: ["bug", "unverified"]
 body:
@@ -15,7 +15,7 @@ body:
       options:
       - label: I have read the [docs]().
         required: true
-      - label: I have searched existing open and closed issues.
+      - label: I have searched open and closed issues.
         required: true
       - label: I agree to follow this project's [Code of Conduct]().
         required: true
