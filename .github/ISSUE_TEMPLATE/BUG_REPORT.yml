@@ -1,5 +1,5 @@
-name: Report a bug
-description: Report a bug or issue in Speedtest Tracker.
+name: Bug report
+description: Report an issue with Speedtest Tracker.
 title: "[Bug] "
 labels: ["🐛 bug"]
 body:
@@ -18,38 +18,41 @@ the docs or closed issues will be closed.
       - label: I have searched existing open and closed issues
         required: true
   - type: textarea
-    id: what-happened
+    id: description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Description
+      description: Describe the issue you experienced.
+      placeholder: I went to the coffe pot and it was empty.
     validations:
       required: true
-
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Describe how to reproduce the issue.
+      placeholder: 1. Go to the coffee pot. 2. Make more coffee.
+    validations:
+      required: true
   - type: input
     id: version
     attributes:
       label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
+      description: What version of Speedtest Tracker are you using?
+      placeholder: v1.0.0
     validations:
       required: true
-
-  - type: dropdown
+  - type: input
     id: browsers
     attributes:
       label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-
+      placeholder: Chrome, Firefox, Safari, etc.
+    validations:
+      required: true
+  - type: file
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
   - type: textarea
     id: logs
     attributes:
