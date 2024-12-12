@@ -11,7 +11,7 @@ body:
     attributes:
       label: Pre-work
       options:
-      - label: I have searched open and closed issues to make sure this feature or similar request does not already exist.
+      - label: I have searched open and closed issues to make sure this or similar feature request does not already exist.
         required: true
       - label: I agree to follow this project's [Code of Conduct]().
         required: true
