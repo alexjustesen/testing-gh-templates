@@ -51,11 +51,6 @@ the docs or closed issues will be closed.
       placeholder: Chrome, Firefox, Safari, etc.
     validations:
       required: true
-  - type: file
-    id: screenshots
-    attributes:
-      label: Screenshots
-      description: If applicable, add screenshots to help explain your problem.
   - type: textarea
     id: logs
     attributes:
