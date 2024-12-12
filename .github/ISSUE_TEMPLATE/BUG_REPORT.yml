@@ -1,12 +1,12 @@
 name: Bug report
 description: Report an issue with Speedtest Tracker.
 title: "[Bug] "
-labels: ["🐛 bug"]
+labels: ["bug", "unverified"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! You should only use this form for issues, to request a change or feature use the [feature request form]().
+        Thanks for taking the time to fill out this bug report! You should only use this form for issues, to request a change or feature use the [feature request form](https://github.com/alexjustesen/testing-gh-templates/issues).
   - type: checkboxes
     attributes:
       label: Pre-work
