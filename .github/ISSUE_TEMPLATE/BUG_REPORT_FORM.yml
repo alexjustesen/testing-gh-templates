@@ -13,9 +13,9 @@ body:
       description: |
         Before opening an issue make sure you've checked the resources below first, any issues that could have been solved by reading the docs or closed issues will be closed.
       options:
-      - label: I have read the [docs](https://docs.speedtest-tracker.dev)
+      - label: I have read the [docs](https://docs.speedtest-tracker.dev).
         required: true
-      - label: I have searched existing open and closed issues
+      - label: I have searched existing open and closed issues.
         required: true
   - type: textarea
     id: description
@@ -39,7 +39,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: Version
+      label: Application Version
       description: What version of Speedtest Tracker are you using?
       placeholder: v1.0.0
     validations:
@@ -51,10 +51,15 @@ body:
       placeholder: Chrome, Firefox, Safari, etc.
     validations:
       required: true
+  - type: file
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: If applicable, add a screenshot to help explain the issue.
   - type: textarea
     id: logs
     attributes:
-      label: Relevant log output
+      label: Logs
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
   - type: checkboxes
