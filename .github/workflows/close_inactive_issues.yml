@@ -21,7 +21,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         # Get today's date and calculate the date 2 weeks ago
-        two_weeks_ago=$(date -u -d '1 day ago' '+%Y-%m-%dT%H:%M:%SZ')
+        two_weeks_ago=$(date -u -d '5 minutes ago' '+%Y-%m-%dT%H:%M:%SZ')
         
         # List issues with the 'question' label that were last updated before 2 weeks ago
         issues=$(gh issue list --label question --state open --search "updated:<$two_weeks_ago" --json number --jq '.[].number')
