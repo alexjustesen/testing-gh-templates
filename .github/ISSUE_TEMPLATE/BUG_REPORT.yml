@@ -22,7 +22,7 @@ the docs or closed issues will be closed.
     attributes:
       label: Description
       description: Describe the issue you experienced.
-      placeholder: I went to the coffe pot and it was empty.
+      placeholder: I went to the coffee pot and it was empty.
     validations:
       required: true
   - type: textarea
@@ -30,7 +30,10 @@ the docs or closed issues will be closed.
     attributes:
       label: Steps to Reproduce
       description: Describe how to reproduce the issue.
-      placeholder: 1. Go to the coffee pot. 2. Make more coffee.
+      placeholder: |
+        1. Go to the coffee pot.
+        2. Make more coffee.
+        3. Pour it into a cup.
     validations:
       required: true
   - type: input
