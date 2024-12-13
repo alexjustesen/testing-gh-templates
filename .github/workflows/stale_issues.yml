@@ -1,28 +1,45 @@
 name: Close Stale Issues
 
 on:
+  # Runs daily at 10:00 AM UTC
   schedule:
-    # Runs daily at 10:00 AM UTC
     - cron: '0 10 * * *'
+  # Runs at issue comment
+  issue_comment:
+    types: [created]
 
-  # Optional: Allow manual trigger
+  # Allow manual trigger
   workflow_dispatch:
 
 jobs:
-  close-stale:
+  manage-stale-issues:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Close stale issues and pull requests
-        uses: actions/stale@v7
+      - name: Close Stale Issues
+        uses: actions/stale@v9
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Issue-specific configuration
           stale-issue-message: >
-            This issue has been automatically marked as stale due to inactivity.
-            If no further activity occurs, it will be closed. Thank you for your contributions.
+            👋 This issue has been automatically marked as stale due to inactivity.
+            If this issue is still relevant, please comment to keep it open.
+            Without activity, it will be closed in 7 days.
+          
           close-issue-message: > 
-             This issue has been automatically closed due to inactivity.
-          days-before-issue-stale: 1         # Number of days of inactivity before marking as stale
-          days-before-issue-close: 1         # Number of days after being marked stale before closing
-          stale-issue-label: 'stale'   # Label to mark issues as stale
-          only-issue-labels: 'question,bug'
+            🔒 This issue has been automatically closed due to prolonged inactivity.
+            Feel free to reopen if the issue is still valid.
+          
+          # More nuanced staleness criteria
+          days-before-issue-stale: 7        # Mark as stale after 7 days of inactivity
+          days-before-issue-close: 7         # Close 7 days after being marked stale
+          
+          # More specific labeling
+          stale-issue-label: '⏳ no-issue-activity'
+          close-issue-label: '🔒 closed-no-issue-activity'
+          
+          # Refined issue selection
+          only-issue-labels: '🐛 bug,❓ question' # Only issues with both bug and question label
+
+# Issues will be closed as "Not Planned" by default. 
