@@ -36,8 +36,8 @@ jobs:
           days-before-issue-close: 7         # Close 7 days after being marked stale
           
           # More specific labeling
-          stale-issue-label: '⏳ no-issue-activity'
-          close-issue-label: '🔒 closed-no-issue-activity'
+          stale-issue-label: ':grey_question: no-issue-activity'
+          close-issue-label: ':lock: closed-no-issue-activity'
           
           # Refined issue selection, Only issues with both bug and question label
           only-issue-labels: ':bug: bug, :question: question'
