@@ -40,8 +40,6 @@ jobs:
           close-issue-label: '🔒 closed-no-issue-activity'
           
           # Refined issue selection, Only issues with both bug and question label
-          only-issue-labels: 
-            - "🐛 bug" 
-            - "❓ question"
+          only-issue-labels: ':bug: bug, :question: question'
 
 # Issues will be closed as "Not Planned" by default. 
