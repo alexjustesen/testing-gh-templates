@@ -22,10 +22,12 @@ jobs:
             
             const message = `Thank you for submitting this feature request! 🚀
             
-            Our team will review this request and evaluate it against our product roadmap.
+            We will review this request and evaluate it soon.
             We'll update this issue as we make progress.
-            
-            In the meantime, please provide any additional context or use cases that might help us better understand the feature request.`;
+
+            In the meantime, please provide any additional context or use cases that might help us better understand the feature request.
+
+            Want to show your support for this feature? Give a thumbs up reaction (👍) on the original post above!`;
             
             await github.rest.issues.createComment({
               owner: owner,
