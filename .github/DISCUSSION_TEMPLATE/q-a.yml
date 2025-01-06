@@ -21,7 +21,6 @@ body:
       default: 0
     validations:
       required: true
-
   - type: textarea
     attributes:
       label: Description
