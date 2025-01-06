@@ -1,7 +1,7 @@
 name: Add Comment to Feature Issues
 on:
   issues:
-    types: [labeled]
+    types: [opened]
 
 jobs:
   add-comment:
