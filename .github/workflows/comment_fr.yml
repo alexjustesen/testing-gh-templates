@@ -1,38 +1,35 @@
-name: Comment on Feature Request with Label
-
+name: Add Comment to Feature Issues
 on:
   issues:
-    types: [opened]
+    types: [labeled]
 
 jobs:
-  comment_on_feature_request:
+  add-comment:
+    # Only run if the added label is "feature"
+    if: github.event.label.name == 'feature'
     runs-on: ubuntu-latest
-
+    permissions:
+      issues: write
+    
     steps:
-      - name: Check if Issue Has 'feature' Label and Comment
-        uses: actions/github-script@v6
+      - name: Add comment
+        uses: actions/github-script@v7
         with:
           script: |
-            const context = github.context;
-            const issue = context.payload.issue;
+            const issueNumber = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
             
-            // Ensure the issue exists
-            if (!issue) {
-              throw new Error("No issue found in the payload");
-            }
-
-            // Check if the issue has the 'feature' label
-            const hasFeatureLabel = issue.labels.some(label => label.name === 'feature');
+            const message = `Thank you for submitting this feature request! 🚀
             
-            if (hasFeatureLabel) {
-              const commentBody = `Thank you for your feature request! We will review your request soon.`;
-              
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                body: commentBody
-              });
-            } else {
-              console.log("No 'feature' label found, skipping comment.");
-            }
+            Our team will review this request and evaluate it against our product roadmap.
+            We'll update this issue as we make progress.
+            
+            In the meantime, please provide any additional context or use cases that might help us better understand the feature request.`;
+            
+            await github.rest.issues.createComment({
+              owner: owner,
+              repo: repo,
+              issue_number: issueNumber,
+              body: message
+            });
