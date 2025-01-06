@@ -1,0 +1,29 @@
+name: Comment on Feature Request
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment_on_issue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Comment on the Issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = github.context.payload.issue;
+            const ideaSection = issue.body.match(/For where is your idea\s*:\s*(\w+)/i);
+            
+            if (ideaSection) {
+              const section = ideaSection[1];
+              const commentBody = `Thank you for your feature request! Based on your selection, we have noted that this request belongs to the **${section}** section. We will review your request soon.`;
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: commentBody
+              });
+            }
