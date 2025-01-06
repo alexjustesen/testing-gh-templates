@@ -62,7 +62,7 @@ body:
     id: application-information
     attributes:
       label: Application Information
-      description: To generate application information run `php artisan about --format=json` from the application's path. This will be automatically formatted into code, so no need for backticks.
+      description: To generate application information run `php artisan about --json` from the application's path. This will be automatically formatted into code, so no need for backticks.
       render: json
     validations:
       required: true
