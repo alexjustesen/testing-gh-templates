@@ -12,14 +12,6 @@ jobs:
       issues: write
     
     steps:
-      - name: Bot Details
-        id: bot-details
-        uses: raven-actions/bot-details@v1
-
-      - name: Bot Details outputs
-        run: |
-          echo "Slug name: Speedy"
-          echo "Display name: Speedy"
       - name: Add comment
         uses: actions/github-script@v7
         with:
