@@ -1,24 +1,31 @@
-name: Comment on Feature Request
+name: Comment on Feature Request with Label
 
 on:
   issues:
     types: [opened]
 
 jobs:
-  comment_on_issue:
+  comment_on_feature_request:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Comment on the Issue
+      - name: Check if Issue Has 'feature' Label and Comment
         uses: actions/github-script@v6
         with:
           script: |
-            const issue = github.context.payload.issue;
-            const ideaSection = issue.body.match(/For where is your idea\s*:\s*(\w+)/i);
+            const context = github.context;
+            const issue = context.payload.issue;
             
-            if (ideaSection) {
-              const section = ideaSection[1];
-              const commentBody = `Thank you for your feature request! Based on your selection, we have noted that this request belongs to the **${section}** section. We will review your request soon.`;
+            // Ensure the issue exists
+            if (!issue) {
+              throw new Error("No issue found in the payload");
+            }
+
+            // Check if the issue has the 'feature' label
+            const hasFeatureLabel = issue.labels.some(label => label.name === 'feature');
+            
+            if (hasFeatureLabel) {
+              const commentBody = `Thank you for your feature request! We will review your request soon.`;
               
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
@@ -26,4 +33,6 @@ jobs:
                 issue_number: issue.number,
                 body: commentBody
               });
+            } else {
+              console.log("No 'feature' label found, skipping comment.");
             }
