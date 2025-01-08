@@ -27,3 +27,7 @@ A short description of the pull request changes should go here and the sections 
 ## 📷 Screenshots
 
 If this PR has any UI/UX changes it's strongly suggested you add screenshots here.
+
+## More
+- [ ] Added/updated [documentation](https://github.com/alexjustesen/speedtest-tracker-docs)
+  - PR Link:  
