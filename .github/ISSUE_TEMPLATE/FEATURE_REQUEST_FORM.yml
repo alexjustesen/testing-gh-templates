@@ -13,6 +13,8 @@ body:
       options:
       - label: I have searched open and closed feature request to make sure this or similar feature request does not already exist.
         required: true
+      - label: I have reviewed the [milestones](https://github.com/alexjustesen/speedtest-tracker/milestones) to ensure that this feature request, or a similar one, has not already been proposed.
+        required: true
       - label: I agree to follow this project's [Code of Conduct]().
         required: true
   - type: dropdown
